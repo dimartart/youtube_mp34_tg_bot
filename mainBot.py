@@ -67,9 +67,9 @@ async def change_mode(message: types.Message) -> None:
     user_id = message.from_user.id
 
     if message.text in change_mode_phrases_video:
-        user_states_download_mode[user_id] = "video"  # {user_id: "video"/"video"}
+        user_states_download_mode[user_id] = "video"  # {user_id: "video"/"audio"}
     elif message.text in change_mode_phrases_audio:
-        user_states_download_mode[user_id] = "audio"  # # {user_id: "video"/"audio"}
+        user_states_download_mode[user_id] = "audio"  
 
     await message.answer(f"{lf('you will be downloading', user_id)} {user_states_download_mode.get(user_id, 'video')}")
 
